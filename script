@@ -1,0 +1,53 @@
+use obec
+db
+db.employees.find()
+
+db.employees.insert({ name: 'John' })
+db.employees.find()
+
+show collections
+
+db.employees.find({
+    name: 'Joh'
+})
+
+db.employees.insert({ name: 'Peter', surname: 'Cop'})
+db.employees.find({ name: 'Peter', surname: 'Cop' })
+db.employees.insert({ _id: 'DOC01' }
+db.employees.deleteOne({ _id: 'DOC01' })
+db.employees.update({ name: 'John' }, { surname: 'Pan' })
+db.employees.update({
+    surname: 'Pan'
+}, {
+    $set: { name: 'Peter' }
+})
+
+
+db.employees.dropIndex('name_1')
+db.employees.createIndex({ name: 1, surname: -1 })
+
+db.employees.insert({ name: 'James',
+    address: { country: 'THA' }
+})
+db.employees.createIndex({ 'address.country': 1 })
+
+
+db.employees.insert({
+    name: 'Mike',
+    phones: [ '101', '102' ]
+})
+db.employees.createIndex({ phones: 1 })
+
+
+db.employees.deleteOne({ surname: 'Pan' })
+db.employees.createIndex({ name: 1 }, { unique: true })
+mongoimport --version
+
+ mongoimport --db obec --collection companies --file ...
+
+
+mongoimport --db obec --collection companies --file companies.json
+mongoimport --db obec --collection products --file products.json
+mongoimport --db obec --collection zips --file zips.json
+
+db.products.find({color:'green'})
