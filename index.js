@@ -36,4 +36,26 @@ random((result)=>{
 
 +++++++++++++++++++++
 
+function random(cb) {
+    setTimeout(()=>{
+        cb(Math.random(),Math.random())
+        
+    },1000)
+}
 
+random((result1,result2)=>{
+    console.log(result1,result2)
+})
+
++++++++++++++++++
+    
+    function random(value, cb) {
+    setTimeout(()=>{
+        cb(Math.random() * value)
+        
+    },1000)
+}
+
+random(100, (result)=>{
+    console.log(result)
+})
